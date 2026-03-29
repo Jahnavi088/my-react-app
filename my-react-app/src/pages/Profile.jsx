@@ -1,7 +1,6 @@
-import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../components/ui/Button.jsx'
-import { getUser, logout } from '../utils/auth.js'
+import { useAuth } from '../app/useAuth.js'
 import styles from './Profile.module.css'
 
 function initials(name) {
@@ -17,7 +16,7 @@ function initials(name) {
 
 export function Profile() {
   const nav = useNavigate()
-  const user = useMemo(() => getUser(), [])
+  const { user, logout } = useAuth()
   const name = user?.fullName || 'Marry Doe'
   const email = user?.email || 'Marry@Gmail.Com'
 

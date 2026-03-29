@@ -2,11 +2,12 @@ import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../components/ui/Button.jsx'
 import { TextField } from '../components/ui/TextField.jsx'
-import { login } from '../utils/auth.js'
+import { useAuth } from '../app/useAuth.js'
 import shared from './pageStyles.module.css'
 
 export function Login() {
   const nav = useNavigate()
+  const { login } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')

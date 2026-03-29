@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from '../components/ui/Button.jsx'
 import { RadioRow } from '../components/ui/RadioRow.jsx'
 import { TextField } from '../components/ui/TextField.jsx'
-import { setAuthed, setUser } from '../utils/auth.js'
+import { useAuth } from '../app/useAuth.js'
 import shared from './pageStyles.module.css'
 import styles from './Signup.module.css'
 
 export function Signup() {
   const nav = useNavigate()
+  const { signup } = useAuth()
   const [fullName, setFullName] = useState('Marry Doe')
   const [phone, setPhone] = useState('Marry Doe')
   const [email, setEmail] = useState('Marry Doe')
@@ -18,7 +19,7 @@ export function Signup() {
 
   function onSubmit(e) {
     e.preventDefault()
-    setUser({
+    signup({
       fullName: fullName.trim(),
       phone: phone.trim(),
       email: email.trim(),
@@ -26,7 +27,6 @@ export function Signup() {
       company: company.trim(),
       isAgency,
     })
-    setAuthed(true)
     nav('/profile', { replace: true })
   }
 

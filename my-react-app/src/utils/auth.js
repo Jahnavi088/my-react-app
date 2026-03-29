@@ -1,17 +1,14 @@
+import { readJson, writeJson } from './storage.js'
+
 const USER_KEY = 'popx_user'
 const AUTH_KEY = 'popx_authed'
 
 export function getUser() {
-  try {
-    const raw = localStorage.getItem(USER_KEY)
-    return raw ? JSON.parse(raw) : null
-  } catch {
-    return null
-  }
+  return readJson(USER_KEY, null)
 }
 
 export function setUser(user) {
-  localStorage.setItem(USER_KEY, JSON.stringify(user))
+  writeJson(USER_KEY, user)
 }
 
 export function setAuthed(v) {
