@@ -1,0 +1,28 @@
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 18px;
+  padding-top: 8px;
+}
+
+.label {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.option input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+}
+

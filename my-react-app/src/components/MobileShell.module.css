@@ -1,0 +1,27 @@
+.stage {
+  width: min(100%, var(--mobile-w));
+}
+
+.shell {
+  width: 100%;
+  min-height: var(--mobile-h);
+  background: var(--surface);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+@media (max-width: 420px) {
+  .stage {
+    width: 100%;
+  }
+
+  .shell {
+    min-height: 100dvh;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+}
+

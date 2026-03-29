@@ -1,0 +1,26 @@
+.page {
+  padding-bottom: 18px;
+}
+
+.form {
+  margin-top: 18px;
+  min-height: calc(var(--mobile-h) - 110px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.fields {
+  display: grid;
+  gap: 12px;
+}
+
+.bottom {
+  padding-top: 18px;
+}
+
+@media (max-width: 420px) {
+  .form {
+    min-height: calc(100dvh - 110px);
+  }
+}
+
